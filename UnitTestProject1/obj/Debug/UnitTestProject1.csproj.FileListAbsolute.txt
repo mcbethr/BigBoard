@@ -1,0 +1,17 @@
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\DrawRectangle.exe
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\DrawRectangle.pdb
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\DrawRectangle.exe.config
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\code\DrawRectangle\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\code\DrawRectangle\UnitTestProject1\obj\Debug\UnitTestProject1.csprojAssemblyReference.cache
+C:\code\DrawRectangle\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
+C:\code\DrawRectangle\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CopyComplete
+C:\code\DrawRectangle\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\code\DrawRectangle\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
