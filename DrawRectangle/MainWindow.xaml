@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DrawRectangle"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="768" Width="1024">
 
     <Grid x:Name="LayoutRoot" Background="White" MouseLeftButtonUp="LayoutRoot_MouseLeftButtonUp" MouseLeave="LayoutRoot_MouseLeave" MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown" MouseMove="LayoutRoot_MouseMove" Margin="0,0,0,-21" >
 
-        <Image Source="/images/Capture.Png" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <Image Source="SovietUnion.PNG" Stretch="UniformToFill" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
 
         <Canvas x:Name="BackPlane">
             <Rectangle x:Name="Rect" Stroke="DarkOrange" Visibility="Collapsed" Fill="#77FFFFFF"></Rectangle>
             
         </Canvas>
+        <Button x:Name="clearButton" Content="Clear" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Click="clear_click"/>
+        <Button x:Name="recallButton" Content="Recall" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="75" Click="recall_click" IsEnabled="False"/>
 
     </Grid>
 </Window>

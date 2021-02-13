@@ -1,7 +1,6 @@
 C:\code\DrawRectangle\DrawRectangle\bin\Debug\DrawRectangle.exe.config
 C:\code\DrawRectangle\DrawRectangle\bin\Debug\DrawRectangle.exe
 C:\code\DrawRectangle\DrawRectangle\bin\Debug\DrawRectangle.pdb
-C:\code\DrawRectangle\DrawRectangle\obj\Debug\DrawRectangle.csprojAssemblyReference.cache
 C:\code\DrawRectangle\DrawRectangle\obj\Debug\MainWindow.g.cs
 C:\code\DrawRectangle\DrawRectangle\obj\Debug\App.g.cs
 C:\code\DrawRectangle\DrawRectangle\obj\Debug\DrawRectangle_MarkupCompile.cache

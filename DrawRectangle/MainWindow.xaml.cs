@@ -21,17 +21,37 @@ namespace DrawRectangle
     /// </summary>
     public partial class MainWindow : Window
     {
-        bool _isDragging = false;
+        bool m_isDragging = false;
 
-        private Point _anchorPoint = new Point();
+        private Point m_anchorPoint = new Point();
 
-
+        private List<Aircraft> m_AircraftInFlight;
 
         public MainWindow()
         {
 
             InitializeComponent();
+            m_AircraftInFlight = new List<Aircraft>();
+            m_AircraftInFlight.Add(new Aircraft(20, 110, 100, 100, 1));
+            
+            m_AircraftInFlight.Add(new Aircraft(200, 100, 200, 200, 2));
+            m_AircraftInFlight.Add(new Aircraft(700, 110, 100, 100, 3));
+            m_AircraftInFlight.Add(new Aircraft(950, 102, 500, 500, 4));
+            m_AircraftInFlight.Add(new Aircraft(120, 110, 100, 100, 5));
+            m_AircraftInFlight.Add(new Aircraft(520, 120, 200, 200, 6));
+            m_AircraftInFlight.Add(new Aircraft(720, 110, 100, 100, 7));
+            m_AircraftInFlight.Add(new Aircraft(750, 140, 500, 500, 8));
+            m_AircraftInFlight.Add(new Aircraft(170, 200, 100, 100, 5));
+            m_AircraftInFlight.Add(new Aircraft(620, 120, 200, 200, 6));
+            m_AircraftInFlight.Add(new Aircraft(820, 130, 100, 100, 7));
+            m_AircraftInFlight.Add(new Aircraft(900, 140, 500, 500, 8));
+            
 
+            foreach (var i in m_AircraftInFlight)
+            {
+                DrawCircle(i.startingLocation);
+            }
+ 
         }
 
         private void LayoutRoot_MouseDown(object sender, MouseButtonEventArgs e)
@@ -43,25 +63,20 @@ namespace DrawRectangle
         private void LayoutRoot_MouseMove(object sender, MouseEventArgs e)
         {
             // if dragging, then adjust rectangle position based on mouse movement
-            if (_isDragging == true)
+            if (m_isDragging == true)
             {
 
-                SquareShape RS = new SquareShape();
-                RS.CreateShape(_anchorPoint.X, _anchorPoint.Y, e.GetPosition(BackPlane).X, e.GetPosition(BackPlane).Y);
+                //RectangleShape shape = new SquareShape();
+                RectangleShape shape = new RectangleShape();
+                shape.CreateShape(m_anchorPoint.X, m_anchorPoint.Y, e.GetPosition(BackPlane).X, e.GetPosition(BackPlane).Y);
+
+                Rect.SetValue(Canvas.LeftProperty, shape.Corner.X);
+                Rect.SetValue(Canvas.TopProperty, shape.Corner.Y);
+
+                Rect.Width = shape.Width;
+                Rect.Height = shape.Height;
 
 
-                //double x = e.GetPosition(BackPlane).X;
-                //double y = e.GetPosition(BackPlane).Y;
-
-                Rect.SetValue(Canvas.LeftProperty, RS.Corner.X);
-                Rect.SetValue(Canvas.TopProperty, RS.Corner.Y);
-
-                Rect.Width = RS.Width;
-                Rect.Height = RS.Height;
-
-
-                //Rect.Width = Math.Abs(x - _anchorPoint.X);
-                //Rect.Height = Math.Abs(y - _anchorPoint.Y);
 
                 if (Rect.Visibility != Visibility.Visible)
                 {
@@ -78,45 +93,27 @@ namespace DrawRectangle
             ResetRect();
             Rectangle Permanant = new Rectangle();
 
-            SquareShape RS = new SquareShape();
+            //RectangleShape shape = new SquareShape();
+            RectangleShape shape = new RectangleShape();
 
-            RS.CreateShape(_anchorPoint.X, _anchorPoint.Y, e.GetPosition(BackPlane).X, e.GetPosition(BackPlane).Y);
+            shape.CreateShape(m_anchorPoint.X, m_anchorPoint.Y, e.GetPosition(BackPlane).X, e.GetPosition(BackPlane).Y);
 
-            Permanant.SetValue(Canvas.LeftProperty, RS.Corner.X);
-            Permanant.SetValue(Canvas.TopProperty, RS.Corner.Y);
+            Permanant.SetValue(Canvas.LeftProperty, shape.Corner.X);
+            Permanant.SetValue(Canvas.TopProperty, shape.Corner.Y);
 
-            Permanant.Width = RS.Width;
-            Permanant.Height = RS.Height;
+            Permanant.Width = shape.Width;
+            Permanant.Height = shape.Height;
             Permanant.Fill = new SolidColorBrush(Colors.Orange);
             Permanant.Opacity = .5;
-
-
             Permanant.StrokeThickness = 2;
+
             BackPlane.Children.Add(Permanant);
+           
 
-            SelectAircraft SA = new SelectAircraft(RS);
+            RecallEngine RE = new RecallEngine(m_AircraftInFlight, shape);
+            recallButton.IsEnabled = RE.ConfirmSelectedAircraft();
 
-            DrawCircle();
-
-            /*
-            ResetRect();
-            Rectangle Permanant = new Rectangle();
-            double x = e.GetPosition(BackPlane).X;
-            double y = e.GetPosition(BackPlane).Y;
-
-            Permanant.SetValue(Canvas.LeftProperty, Math.Min(x, _anchorPoint.X));
-            Permanant.SetValue(Canvas.TopProperty, Math.Min(y, _anchorPoint.Y));
-
-
-            Permanant.Width = Math.Abs(x - _anchorPoint.X);
-            Permanant.Height = Math.Abs(y - _anchorPoint.Y);
-            Permanant.Fill = new SolidColorBrush(Colors.Orange);
-            Permanant.Opacity = .5;
-
-
-            Permanant.StrokeThickness = 2;
-            BackPlane.Children.Add(Permanant); 
-            */
+       
         }
 
 
@@ -127,24 +124,24 @@ namespace DrawRectangle
 
         private void LayoutRoot_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            _anchorPoint.X = e.GetPosition(BackPlane).X;
-            _anchorPoint.Y = e.GetPosition(BackPlane).Y;
-            _isDragging = true;
+            m_anchorPoint.X = e.GetPosition(BackPlane).X;
+            m_anchorPoint.Y = e.GetPosition(BackPlane).Y;
+            m_isDragging = true;
         }
 
         private void ResetRect()
         {
             Rect.Visibility = Visibility.Collapsed;
-            _isDragging = false;
+            m_isDragging = false;
         }
 
-        private void DrawCircle()
+        private void DrawCircle(Point point)
         {
             Ellipse Dot = new Ellipse();
             
 
-            Dot.SetValue(Canvas.LeftProperty, (double)10);
-            Dot.SetValue(Canvas.TopProperty, (double)10);
+            Dot.SetValue(Canvas.LeftProperty, (double)point.X);
+            Dot.SetValue(Canvas.TopProperty, (double)point.Y);
             Dot.Width = 4;
             Dot.Height = 4;
             Dot.Fill = new SolidColorBrush(Colors.Red);
@@ -152,6 +149,15 @@ namespace DrawRectangle
             BackPlane.Children.Add(Dot);
         }
 
+        private void clear_click(object sender, RoutedEventArgs e)
+        {
+            BackPlane.Children.Clear();
+        }
+
+        private void recall_click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Recall Code Sent!");
+        }
     }
 
 

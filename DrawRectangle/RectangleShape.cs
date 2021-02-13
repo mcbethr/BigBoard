@@ -16,12 +16,16 @@ namespace DrawRectangle
             public double Y;
         }
 
+        private Rect m_Rect;
+
         private MapPoint m_Corner;
 
         public MapPoint Corner
         {
             get { return m_Corner; }
         }
+
+        public Rect GraphicRectangle { get { return m_Rect; } }
 
         public virtual double Height
         {
@@ -52,6 +56,10 @@ namespace DrawRectangle
         {
             this.Width = Math.Abs(mouseAnchor.X - mouseDragPoint.X);
             this.Height = Math.Abs(mouseAnchor.Y - mouseDragPoint.Y);
+            m_Rect.Location = new Point(mouseAnchor.X, mouseAnchor.Y);
+            m_Rect.Size = new Size(this.Width,this.Height);
+
+
             CreateCorner(mouseAnchor, mouseDragPoint);
         }
 

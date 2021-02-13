@@ -11,22 +11,33 @@ namespace UnitTestProject1
 
 
         [TestMethod]
-        public void TestAbsoluteValue()
+        public void TestRectangle()
         {
 
-            MapPoint mouseClickPoint = new MapPoint();
-            mouseClickPoint.X = 0;
-            mouseClickPoint.Y = 0;
+            RectangleShape rectangle = new RectangleShape();
 
-            MapPoint mouseReleasePoint = new MapPoint();
-            mouseReleasePoint.X = 10;
-            mouseReleasePoint.Y = 10;
+            rectangle.Height = 4;
+            rectangle.Width = 6;
 
-            DrawRectangle.RectangleShape RB = new DrawRectangle.RectangleShape();
-            //RB.CreateAnchor(mouseClickPoint, mouseReleasePoint);
 
-            Assert.AreEqual(10, RB.Height);
+
+            Assert.AreEqual(24, rectangle.Width*rectangle.Height);
       
+        }
+
+        [TestMethod]
+        public void TestSquare()
+        {
+
+            RectangleShape square = new SquareShape();
+
+            square.Height = 4;
+            //square.Width = 6;
+
+
+
+            Assert.AreEqual(16, square.Width * square.Height);
+
         }
     }
 }
