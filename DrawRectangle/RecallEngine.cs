@@ -24,7 +24,7 @@ namespace DrawRectangle
         public bool ConfirmSelectedAircraft()
         {
 
-            for (int i = 0; i < m_DeployedAircraft.Count; i++)
+            for (int i = 1; i < m_DeployedAircraft.Count; i++)
             {
                 if (CheckAircraft(m_DeployedAircraft[i]) == false)
                 {

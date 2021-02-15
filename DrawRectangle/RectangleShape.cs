@@ -27,21 +27,21 @@ namespace DrawRectangle
 
         public Rect GraphicRectangle { get { return m_Rect; } }
 
-        public virtual double Height
+        public double Height
         {
             get;set;
                
             
 
         }
-        public virtual double Width
+        public double Width
         {
             get;set;
 
 
         }
 
-        public virtual void CreateShape(double anchorX, double anchorY, double dragX, double dragY)
+        public virtual  void CreateShape(double anchorX, double anchorY, double dragX, double dragY)
         {
             MapPoint mouseAnchor = new MapPoint();
             MapPoint mouseDragPoint = new MapPoint();
@@ -73,7 +73,7 @@ namespace DrawRectangle
 
     public class SquareShape : RectangleShape
     {
-        
+
         public override void CreateShape(double anchorX, double anchorY, double dragX, double dragY)
         {
             MapPoint mouseAnchor = new MapPoint();
@@ -87,4 +87,7 @@ namespace DrawRectangle
 
 
     }
+
+
+
 }

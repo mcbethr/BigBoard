@@ -99,15 +99,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\Capture.PNG">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="images\SovietUnion.PNG" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="SovietUnion.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\BigBoard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

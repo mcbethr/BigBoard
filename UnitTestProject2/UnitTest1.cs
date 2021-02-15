@@ -24,7 +24,7 @@
                 Assert.AreEqual(24, rectangle.Width * rectangle.Height);
 
             }
-
+        
             [TestMethod]
             public void TestSquare()
             {
@@ -32,13 +32,14 @@
                 RectangleShape square = new SquareShape();
 
                 square.Height = 4;
-                //square.Width = 6;
+                square.Width = 6;
 
 
 
-                Assert.AreNotEqual(16, square.Width * square.Height);
+                Assert.AreEqual(16, square.Width * square.Height);
 
             }
+    
         }
     }
 

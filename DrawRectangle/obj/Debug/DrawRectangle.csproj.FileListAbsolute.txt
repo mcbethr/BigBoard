@@ -27,3 +27,4 @@ C:\Users\admin\Downloads\DrawRectangle (2)\DrawRectangle\DrawRectangle\obj\Debug
 C:\Users\admin\Downloads\DrawRectangle (2)\DrawRectangle\DrawRectangle\obj\Debug\DrawRectangle.csproj.CoreCompileInputs.cache
 C:\Users\admin\Downloads\DrawRectangle (2)\DrawRectangle\DrawRectangle\obj\Debug\DrawRectangle.exe
 C:\Users\admin\Downloads\DrawRectangle (2)\DrawRectangle\DrawRectangle\obj\Debug\DrawRectangle.pdb
+C:\Code\DrawRectangle\DrawRectangle\obj\Debug\DrawRectangle.csprojAssemblyReference.cache

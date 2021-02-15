@@ -32,25 +32,25 @@ namespace DrawRectangle
 
             InitializeComponent();
             m_AircraftInFlight = new List<Aircraft>();
-            m_AircraftInFlight.Add(new Aircraft(20, 110, 100, 100, 1));
+            m_AircraftInFlight.Add(new Aircraft(36, 58, 71, 336, 1));
+            m_AircraftInFlight.Add(new Aircraft(84, 40, 223, 329, 2));
+            m_AircraftInFlight.Add(new Aircraft(207, 39, 258, 257, 3));
+            m_AircraftInFlight.Add(new Aircraft(259, 50, 322, 351, 4));
+            m_AircraftInFlight.Add(new Aircraft(348, 42, 333, 205, 5));
+            m_AircraftInFlight.Add(new Aircraft(402, 52, 374, 242, 6));
+            m_AircraftInFlight.Add(new Aircraft(542, 46, 337, 244, 7));
+            m_AircraftInFlight.Add(new Aircraft(593, 38, 545, 236, 8));
+            m_AircraftInFlight.Add(new Aircraft(712, 52, 648, 230, 9));
+            m_AircraftInFlight.Add(new Aircraft(761, 66, 960, 540, 10));
+            m_AircraftInFlight.Add(new Aircraft(854, 67, 751, 277, 11));
+            m_AircraftInFlight.Add(new Aircraft(902, 85, 696, 327, 12));
             
-            m_AircraftInFlight.Add(new Aircraft(200, 100, 200, 200, 2));
-            m_AircraftInFlight.Add(new Aircraft(700, 110, 100, 100, 3));
-            m_AircraftInFlight.Add(new Aircraft(950, 102, 500, 500, 4));
-            m_AircraftInFlight.Add(new Aircraft(120, 110, 100, 100, 5));
-            m_AircraftInFlight.Add(new Aircraft(520, 120, 200, 200, 6));
-            m_AircraftInFlight.Add(new Aircraft(720, 110, 100, 100, 7));
-            m_AircraftInFlight.Add(new Aircraft(750, 140, 500, 500, 8));
-            m_AircraftInFlight.Add(new Aircraft(170, 200, 100, 100, 5));
-            m_AircraftInFlight.Add(new Aircraft(620, 120, 200, 200, 6));
-            m_AircraftInFlight.Add(new Aircraft(820, 130, 100, 100, 7));
-            m_AircraftInFlight.Add(new Aircraft(900, 140, 500, 500, 8));
-            
-
+            /*
             foreach (var i in m_AircraftInFlight)
             {
                 DrawCircle(i.startingLocation);
             }
+            */
  
         }
 
@@ -66,7 +66,6 @@ namespace DrawRectangle
             if (m_isDragging == true)
             {
 
-                //RectangleShape shape = new SquareShape();
                 RectangleShape shape = new RectangleShape();
                 shape.CreateShape(m_anchorPoint.X, m_anchorPoint.Y, e.GetPosition(BackPlane).X, e.GetPosition(BackPlane).Y);
 
@@ -93,8 +92,7 @@ namespace DrawRectangle
             ResetRect();
             Rectangle Permanant = new Rectangle();
 
-            //RectangleShape shape = new SquareShape();
-            RectangleShape shape = new RectangleShape();
+            RectangleShape shape = new SquareShape();
 
             shape.CreateShape(m_anchorPoint.X, m_anchorPoint.Y, e.GetPosition(BackPlane).X, e.GetPosition(BackPlane).Y);
 
