@@ -41,7 +41,7 @@ namespace DrawRectangle
 
         }
 
-        public virtual  void CreateShape(double anchorX, double anchorY, double dragX, double dragY)
+        public virtual void CreateShape(double anchorX, double anchorY, double dragX, double dragY)
         {
             MapPoint mouseAnchor = new MapPoint();
             MapPoint mouseDragPoint = new MapPoint();
@@ -71,6 +71,7 @@ namespace DrawRectangle
 
     }
 
+
     public class SquareShape : RectangleShape
     {
 
@@ -87,7 +88,6 @@ namespace DrawRectangle
 
 
     }
-
 
 
 }

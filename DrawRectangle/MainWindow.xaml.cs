@@ -92,7 +92,7 @@ namespace DrawRectangle
             ResetRect();
             Rectangle Permanant = new Rectangle();
 
-            RectangleShape shape = new SquareShape();
+            RectangleShape shape = new RectangleShape();
 
             shape.CreateShape(m_anchorPoint.X, m_anchorPoint.Y, e.GetPosition(BackPlane).X, e.GetPosition(BackPlane).Y);
 
